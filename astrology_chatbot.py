@@ -6,6 +6,14 @@ import streamlit as st
 from datetime import datetime
 import importlib
 import json
+import sys
+
+# Check if running with Streamlit
+try:
+    st.runtime.exists()
+except AttributeError:
+    print("This script must be run with Streamlit. Use: streamlit run astrology_chatbot.py")
+    sys.exit(1)
 
 # Load either google.genai or google.generativeai
 try:
