@@ -10,7 +10,9 @@ import sys
 
 # Check if running with Streamlit
 try:
-    st.runtime.exists()
+    if not st.runtime.exists():
+        print("This script must be run with Streamlit. Use: streamlit run astrology_chatbot.py")
+        sys.exit(1)
 except AttributeError:
     print("This script must be run with Streamlit. Use: streamlit run astrology_chatbot.py")
     sys.exit(1)
